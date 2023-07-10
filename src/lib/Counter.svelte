@@ -5,6 +5,6 @@
   }
 </script>
 
-<button on:click={increment}>
+<button on:click={increment} class=" bg-slate-600 font-bold rounded-md">
   count is {count}
 </button>
