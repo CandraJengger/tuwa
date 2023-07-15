@@ -18,4 +18,5 @@
     label="Username"
     on:change="{handleCurrencyChange}" />
   <Button />
+  <Button type="secondary" />
 </Layout>
