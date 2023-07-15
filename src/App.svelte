@@ -41,7 +41,16 @@
 </script>
 
 <Layout>
-  <h1>Tuwa</h1>
+  <div class=" mb-9 text-center">
+    <h1
+      class="mb-2 font-delius-swash-caps text-4xl font-medium text-slate-900 dark:text-indigo-500"
+    >
+      Tuwa
+    </h1>
+    <h2 class="mx-auto max-w-xs text-gray-600 dark:text-gray-300">
+      to help you calculate how many hours and total to pay
+    </h2>
+  </div>
   <div class="grid grid-cols-1">
     <Input
       type="number"
