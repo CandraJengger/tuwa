@@ -5,3 +5,21 @@
 * {
   font-family: "Plus Jakarta Sans", sans-serif !important;
 }
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply h-[20px] w-[6px];
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply rounded-full bg-white;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full  bg-slate-200 transition-all duration-150;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-600;
+  }
+}
