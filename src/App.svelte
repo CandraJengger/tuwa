@@ -33,34 +33,10 @@
   };
 
   const handleSubmit = () => {
-    // handleToggleModal();
-    // const totalTime = getDifferentTimeByMinute(time.startTime, time.endTime);
-    // differentTime = totalTime;
-    // total = totalTime * (price / 60);
-    var canvas = document.createElement('canvas') as HTMLCanvasElement;
-    const context = canvas.getContext('2d');
-    canvas.width = 512;
-    canvas.height = 512;
-    context.fillStyle = '#0f172a';
-    context.fillRect(0, 0, 512, 512);
-
-    context.fillStyle = '#3b82f6'; // Set your desired fill color
-    context.font = `500 150px Delius Swash Caps`; // 32 62
-    context.textAlign = 'center';
-    context.textBaseline = 'middle';
-    context.fillText('Tuwa', 512 / 2, 512 / 2);
-
-    const data = canvas.toDataURL('image/png');
-
-    console.log(data);
-    fetch(data)
-      .then(res => {
-        return res.blob();
-      })
-      .then(blob => {
-        const url = URL.createObjectURL(blob);
-        console.log(url);
-      });
+    handleToggleModal();
+    const totalTime = getDifferentTimeByMinute(time.startTime, time.endTime);
+    differentTime = totalTime;
+    total = totalTime * (price / 60);
   };
 </script>
 
