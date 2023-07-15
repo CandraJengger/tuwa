@@ -5,6 +5,7 @@
   import RenderIf from '../utils/RenderIf.svelte';
   import TimePickerItem from './items/TimePickerItem.svelte';
   import { TIMES } from '../constants/time';
+  import { checkTime, destructureTime } from '../utils/time';
 
   // props
   export let time: string;
@@ -31,31 +32,23 @@
     };
   };
 
-  function handleOk(e: any) {
+  const handleOk = (e: any) => {
     const hours = values.hours < 10 ? '0' + values.hours : values.hours + '';
     const minute =
       values.minute < 10 ? '0' + values.minute : values.minute + '';
+
+    toggleOpen();
     dispatch('ok', {
       value: `${hours}:${minute}`
     });
-  }
+  };
 
   onMount(() => {
-    if (time.indexOf(':') === -1) {
-      isValid = false;
-      return;
-    }
-    const temp = time.split(':');
-    const hours = temp[0];
-    const minute = temp[1];
+    const validResult = checkTime(time);
 
-    if (
-      TIMES.hours.indexOf(hours) === -1 ||
-      TIMES.minutes.indexOf(minute) === -1
-    ) {
-      isValid = false;
-      return;
-    }
+    isValid = validResult;
+
+    const { hours, minute } = destructureTime(time);
 
     values = {
       hours: +hours,

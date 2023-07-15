@@ -7,7 +7,7 @@ export const TIMES = {
 
     return temp + '';
   }),
-  minutes: Array.from(Array(13).keys())?.map(item => {
+  minutes: Array.from(Array(12).keys())?.map(item => {
     const temp = item * 5;
     if (temp < 10) {
       return '0' + temp;
